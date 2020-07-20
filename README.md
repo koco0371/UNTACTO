@@ -19,7 +19,11 @@ project detail information
 ## Authors
 * 각자 깃허브 페이지... 적어놓아 주세요 마지막에 고친 사람 이거 주석 지워주세요..
 [박성우](https://github.com/koco0371)
+<<<<<<< HEAD
+[송재훈](https://github.com/)
+=======
 [송재훈](https://github.com/samsong94)
+>>>>>>> 7d414a050ae5669a261c07ec7cf7b00680084c6a
 [이승진](https://github.com/lsjboy93)
 [차영부](https://github.com/)
 [하승민](https://github.com/Seung-minnn)
