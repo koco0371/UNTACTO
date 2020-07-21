@@ -44,6 +44,17 @@ $ mysql --version
 
 ```
 
+## Submit Data
+```
+개인 정보
+	나이 성별 전화번호
+
+감정 정보
+	anger contempt disgust fear happiness neutral sadness surprise
+
+```
+
+
 # Usage
 
 ```
