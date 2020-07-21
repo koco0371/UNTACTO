@@ -13,7 +13,7 @@ project detail information
 ## Built With
 
 * [React](https://react-cn.github.io/react/docs/getting-started.html) - The web framework used
-* [?](https://edu.ssafy.com) - The Backend
+* [Node](https://nodejs.org/ko/about/) - The Backend
 * [Raspbian](https://www.raspberrypi.org/) - Used to generate RaspberryPi OS
 
 ## Authors
