@@ -1,13 +1,39 @@
 # Backend
 
-#### Summary
+## Summary
 ```
 Maria DB를 이용하여 회원정보, 설문정보 등을 DB에 저장할 수 있도록 한다.    
 또한 키오스크와 서버간 설문 광고 및 설문 결과를 송/수신을 할 수 있도록한다.    
 node.js의 Express를 이용하여 서버를 구동한다.
 ```
 
-#### description
+## Tool
+
+### HW
+
+|  Name   | Version                    |
+| :-----: | :------------------------: |
+| Node.js | v12.18.2                   |
+| MariaDB | v10.3.22-MariaDB-0+deb10u1 |
+
+## Check-Version
+
+```
+$ node -v
+    v12.18.2
+
+$ sudo mysql -uroot -p
+MariaDB [(none)]> select version();
+    +---------------------------+
+    | version()                 |
+    +---------------------------+
+    | 10.3.22-MariaDB-0+deb10u1 |
+    +---------------------------+
+
+
+```
+
+## description
 
 ```
 Maria DB
