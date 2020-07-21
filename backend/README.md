@@ -77,3 +77,16 @@ POST    http://localhost:3001/base
 PUT     http://localhost:3001/base
 DELETE  http://localhost:3001/base
 ```
+
+#### Attribute
+```
+- DB 주소
+- DB 비밀번호
+- OPEN API KEY
+- DB 테이블 이름
+- Kiosk ID
+- 기업 ID(?)
+- Kiosk 위치
+- Kiosk 영상 번호(?)
+- 
+```
