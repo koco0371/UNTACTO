@@ -26,59 +26,100 @@ React를 기반으로 개발
 
 ```
 Company
-id, companyName, password, createdAt, surveys, contacts
+id, companyName, password, createdAt, surveys, (contacts)
 ```
 
-```
-POST 	/singup 	body: { companyName, password, passwordConfirm }
-=> 회원가입
-POST 	/login		body: { companyName, password }
-=> 로그인
-POST 	/logout
-=> 로그아웃
-```
+- 회원가입
+
+  ```
+  POST  /singup  body: { companyName, password, passwordConfirm }
+  ```
+
+- 로그인
+
+  ```
+  POST  /login  body: { companyName, password }
+  ```
+
+- 로그아웃
+
+  ```
+  POST  /logout
+  ```
 
 ### Surveys
 
 ```
 Survey
-id, title, location, video, description, company, createdAt, answers
+id, title, location, video, description, company, createdAt, expiresAt answers
 ```
 
-```
-GET		/surveys	query: { ?company, ?createdAt, ?location }
-=> 설문 리스트(필터)
-POST	/surveys	body: { title, location, video, description }
-=> 설문 생성
+- 설문 리스트 (필터)
 
-GET		/surveys/:id		
-=> 설문 조회
-PATCH 	/surveys/:id
-=> 설문 수정
-DELETE 	/surveys/:id
-=> 설문 삭제
-```
+  ```
+  GET  /surveys  query: { ?company, ?createdAt, ?expiresAt, ?location }
+  ```
 
-### Contacts
+- 설문 생성
+
+  ```
+  POST  /surveys  body: { title, location, video, description, expiresAt }
+  ```
+
+- 설문 조회
+
+  ```
+  GET  /surveys/:id
+  ```
+
+- 설문 수정
+
+  ```
+  PATCH  /surveys/:id
+  ```
+
+- 설문 삭제
+
+  ```
+  DELETE  /surveys/:id
+  ```
+
+### Contacts (부차적)
 
 ```
 Contact
 id, title, content, createdAt, company
 ```
 
-```
-GET		/contacts
-=> 건의 리스트
-POST 	/contacts		body: { title, content }
-=> 건의 생성
+- 건의 리스트
 
-GET		/contacts/:id
-=> 건의 조회
-PATCH	/contacts/:id	body: { title, content }
-=> 건의 수정
-DELETE 	/contacts/:id
-=> 건의 삭제
-```
+  ```
+  GET  /contacts  query: { company, ?createdAt }
+  ```
+
+- 건의 생성
+
+  ```
+  POST  /contacts  body: { title, content }
+  ```
+
+- 건의 조회
+
+  ```
+  GET  /contacts/:id
+  ```
+
+- 건의 수정
+
+  ```
+  PATCh  /contacts/:id  body: { title, content }
+  ```
+
+- 건의 삭제
+
+  ```
+  DELETE  /contacts/:id
+  ```
 
 # Usage
 
