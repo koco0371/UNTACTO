@@ -51,7 +51,7 @@ id, companyName, password, createdAt, surveys, (contacts)
 
 ```
 Survey
-id, title, location, video, description, company, createdAt, expiresAt answers
+id, title, location, video, description, company, createdAt, expiresAt, extraSurvey, answers
 ```
 
 - 설문 리스트 (필터)
