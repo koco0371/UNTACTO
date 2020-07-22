@@ -11,10 +11,10 @@ node.js의 Express를 이용하여 서버를 구동한다.
 
 ### HW
 
-|  Name   | Version                    |
-| :-----: | :------------------------: |
-| Node.js | v12.18.2                   |
-| MariaDB | v10.3.22-MariaDB-0+deb10u1 |
+|  Name   | Version                   		  |
+| :-----: | :-------------------------------: |
+| Node.js | v12.18.2                  		  |
+| MariaDB | v10.1.44-MariaDB-0ubuntu0.18.04.1 |
 
 ## Check-Version
 
