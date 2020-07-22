@@ -28,7 +28,7 @@ project detail information
 - [ ] 박성우
 
 - [ ] 송재훈
-- [ ] 이승진
+- [x] 이승진
 - [x] 차영부
 - [ ] 하승민
 
