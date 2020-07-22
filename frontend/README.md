@@ -15,10 +15,10 @@ React를 기반으로 개발
 
 ### SW
 
-|    Name    | Version                                                                                  |
-| :--------: | :--------------------------------------------------------------------------------------- |
-|   React    | ...
-|   node.js  | v.12.18.2                                                                                   |
+|  Name   | Version   |
+| :-----: | :-------- |
+|  React  | ...       |
+| node.js | v.12.18.2 |
 
 ## Routes
 
@@ -121,17 +121,12 @@ id, title, content, createdAt, company
   DELETE  /contacts/:id
   ```
 
-# Usage
+## admin page
 
-```
-
-```
-
-## Submit Data
 ```
 [Admin Page] (관리자 계정으로 로그인 시)
 
-* 회원(관리자) 정보
+* 회원(관리자) 정보 <- login
 	* id pwd
 
 * 회사 정보 CRUD
@@ -144,13 +139,17 @@ id, title, content, createdAt, company
 	* 키오스크명 상태표시 위치 당일총설문횟수 등록된광고수
 
 * 설문자 정보 CRUD
-	* 전화번호 나이 성별 총설문응답횟수 총상품교환수    
+	* 전화번호 나이 성별 총설문응답횟수 총상품교환수
 ```
 
+# Usage
+
+```
+
+```
 
 # License
 
 ```
 
 ```
-
