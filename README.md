@@ -25,7 +25,7 @@ project detail information
 
 ## Pull & Push Test
 
-- [ ] 박성우
+- [X] 박성우
 
 - [ ] 송재훈
 - [x] 이승진
