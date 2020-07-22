@@ -23,6 +23,15 @@ project detail information
 :person_with_blond_hair: [차영부](https://github.com/kennycha)
 :woman: [하승민](https://github.com/Seung-minnn)
 
+## Pull & Push Test
+
+- [ ] 박성우
+
+- [ ] 송재훈
+- [ ] 이승진
+- [x] 차영부
+- [ ] 하승민
+
 ## License
 
 이 프로젝트는 MIT 라이센스에 따라 라이센스가 부여됩니다. 자세한 내용은 [LICENSE.md] (LICENSE.md) 파일을 참조하십시오.
