@@ -6,16 +6,18 @@ AWS 서버 안에 Maria DB와 node.js를 설치하여 이용한다.
 Maria DB를 이용하여 회원정보, 설문정보 등을 DB에 저장할 수 있도록 한다.    
 또한 키오스크와 서버간 설문 광고 및 설문 결과를 송/수신을 할 수 있도록한다.    
 node.js의 Express를 이용하여 서버를 구동한다.
+React를 이용하여 만든 웹은 AWS EC2와 Nginx를 이용하여 배포한다.
 ```
 
 ## Tool
 
 ### HW
 
-|  Name   | Version                   		  |
-| :-----: | :-------------------------------: |
-| Node.js | v12.18.2                  		  |
-| MariaDB | v10.1.44-MariaDB-0ubuntu0.18.04.1 |
+|  Name   | Version                    |
+| :-----: | :------------------------: |
+| Node.js | v12.18.2                   |
+| MariaDB | v10.3.22-MariaDB-0+deb10u1 |
+| Nginx   | v1.14.0(ubuntu)            |
 
 ## Check-Version
 
@@ -31,6 +33,8 @@ MariaDB [(none)]> select version();
     | 10.1.44-MariaDB-0ubuntu0.18.04.1 |
     +----------------------------------+
 
+$ nginx -v
+    nginx version: nginx/1.14.0 (Ubuntu)
 
 ```
 
@@ -56,15 +60,26 @@ Express에서 제공되는 기능
  - 에러처리
  - 디버깅
 
+Nginx
+ - nginx.org
+
+Nginx의 장점
+ - 가벼움
+ - Apache 서버에 디해 빠른 속도
+
 ```
 
 #### run
 
 ```
+Node.js 실행시
 npm install
 npm start
-
 - http://localhost:3001
+
+nginx 실행시
+$ sudo systemctl start nginx
+- http://i3a103.p.ssafy.io/
 ```
 
 #### routes
@@ -79,3 +94,15 @@ PUT     http://localhost:3001/base
 DELETE  http://localhost:3001/base
 ```
 
+#### Attribute
+```
+- DB 주소
+- DB 비밀번호
+- OPEN API KEY
+- DB 테이블 이름
+- Kiosk ID
+- 기업 ID(?)
+- Kiosk 위치
+- Kiosk 영상 번호(?)
+- 
+```
