@@ -20,6 +20,12 @@ React를 기반으로 개발
 |  React  | ...       |
 | node.js | v.12.18.2 |
 
+###Library
+[redux](https://redux.js.org/)
+[react-redux](https://react-redux.js.org/)
+[axios](https://github.com/axios/axios)
+
+
 ## Routes
 
 ### Auth
