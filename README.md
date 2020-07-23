@@ -33,6 +33,9 @@ project detail information
 - [x] 차영부
 - [x] 하승민
 
+## ERD
+[ER Diagram](https://www.erdcloud.com/d/RrMLB7pLCpuBAQxEv)
+
 ## License
 
 이 프로젝트는 MIT 라이센스에 따라 라이센스가 부여됩니다. 자세한 내용은 [LICENSE.md](LICENSE.md) 파일을 참조하십시오.
