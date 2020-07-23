@@ -22,11 +22,15 @@ React를 기반으로 개발
 
 ### Library
 
+[react-router-dom](https://www.npmjs.com/package/react-router-dom)
+
 [redux](https://redux.js.org/)
 
 [react-redux](https://react-redux.js.org/)
 
 [axios](https://github.com/axios/axios)
+
+[styled-components](https://styled-components.com/docs)
 
 ## Routes
 
