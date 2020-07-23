@@ -25,7 +25,6 @@ React를 기반으로 개발
 [react-redux](https://react-redux.js.org/)
 [axios](https://github.com/axios/axios)
 
-
 ## Routes
 
 ### Auth
@@ -63,7 +62,7 @@ id, title, location, video, description, company, createdAt, expiresAt, extraSur
 - 설문 리스트 (필터)
 
   ```
-  GET  /surveys  query: { ?company, ?createdAt, ?expiresAt, ?location }
+  GET  /surveys  query: { company?, createdAt?, expiresAt?, location? }
   ```
 
 - 설문 생성
@@ -100,7 +99,7 @@ id, title, content, createdAt, company
 - 건의 리스트
 
   ```
-  GET  /contacts  query: { company, ?createdAt }
+  GET  /contacts  query: { company, createdAt? }
   ```
 
 - 건의 생성
