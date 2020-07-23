@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>1000</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:#223344</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QVideoWidget" name="videoWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>800</width>
+      <height>450</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="getRewardButton">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>500</y>
+      <width>300</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>보상 받기</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="startButton">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>500</y>
+      <width>300</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header>QVideoWidget</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>getRewardButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>getReward()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>303</x>
+     <y>633</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>366</x>
+     <y>636</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>startButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>startVote()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>732</x>
+     <y>654</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>772</x>
+     <y>674</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>getReward()</slot>
+  <slot>startVote()</slot>
+ </slots>
+</ui>
