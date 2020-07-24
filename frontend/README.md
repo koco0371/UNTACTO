@@ -22,15 +22,17 @@ React를 기반으로 개발
 
 ### Library
 
-[react-router-dom](https://www.npmjs.com/package/react-router-dom)
+[react-router-dom](https://www.npmjs.com/package/react-router-dom) for routing
 
-[redux](https://redux.js.org/)
+[redux](https://redux.js.org/) for managing state
 
-[react-redux](https://react-redux.js.org/)
+[react-redux](https://react-redux.js.org/) for using redux with react
 
-[axios](https://github.com/axios/axios)
+[axios](https://github.com/axios/axios) for fetching data
 
-[styled-components](https://styled-components.com/docs)
+[styled-components](https://styled-components.com/docs) for styling
+
+[quill](https://quilljs.com/docs/quickstart/) for inner editor
 
 ## Routes
 
