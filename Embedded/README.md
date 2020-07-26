@@ -17,9 +17,10 @@ KIOSK에서 투표 기능을 개발
 
 ### HW
 
-|     Name     |            Version             |
+|     Name     |            Info             |
 | :----------: | :----------------------------: |
 | Raspberry Pi | Raspberry Pi 3 Model B Rev 1.2 |
+| LCD Monitor | 7inch, Resolution : 1920 x 1080 |
 
 ### SW
 
@@ -29,6 +30,7 @@ KIOSK에서 투표 기능을 개발
 |     QT     | 5.14.1                                                                                   |
 | QT Creator | 4.11.1                                                                                   |
 |   MYSQL    | Ver 15.1 Distrib 10.1.45-MariaDB, for debian-linux-gnueabihf (armv7l) using readline 5.2 |
+| OpenCV | 4.1.0 |
 
 ## Check-Version
 
@@ -42,6 +44,32 @@ $ cat /proc/device-tree/model
 $ mysql --version
     mysql  Ver 15.1 Distrib 10.1.45-MariaDB, for debian-linux-gnueabihf (armv7l) using readline 5.2
 
+```
+
+## Require Module
+```
+sudo apt-get install update
+sudo apt-get install upgrade
+sudo apt-get install cmake
+sudo apt-get install qtmultimedia5-dev libqt5multimediawidgets5 libqt5multimedia5-plugins libqt5multimedia5
+sudo apt-get install python3-pyqt5
+sudo apt-get install qttools5-dev-tools
+sudo apt-get install build-essestial cmake pkg-config
+sudo apt-get install libjpeg-dev libtiff5-dev libjasper-dev libpng-dev
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo apt-get install libxvidcore-dev libx264-dev
+sudo apt-get install libfontconfig1-dev libcairo2-dev
+sudo apt-get install libgdk-pixbuf2.0-dev libpango1.0-dev
+sudo apt-get install libgtk2.0-dev libgtk-3-dev
+sudo apt-get install libatlas-base-dev gfortran
+sudo apt-get install libhdf5-dev libhdf5-serial-dev libhdf5-103
+sudo apt-get install libqtgui4 libqtwebkit4 libqt4-test python3-pyqt5
+sudo apt-get install qt5-default qtbase5-dev qtdeclarative5-dev qt5-qmake qtcreator libqt5gui5  qtscript5-dev qtmultimedia5-dev libqt5multimedia5-plugins qtquickcontrols2-5-dev libqt5network5 cmake build-essential 
+sudo apt-get install python3-pyqt5.qtmultimedia
+sudo apt-get install python3-pyqt5.qtsql
+pip3 install imutils
+pip3 uninstall opencv-python
+pip3 install opencv-contrib-python==4.1.0.25
 ```
 
 ## Submit Data
