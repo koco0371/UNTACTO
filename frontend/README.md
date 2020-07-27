@@ -28,11 +28,19 @@ React를 기반으로 개발
 
 [react-redux](https://react-redux.js.org/) for using redux with react
 
+[redux-saga]() for redux middleware
+
+[redux-devtools-extension]() for check redux stuff in development stage
+
 [axios](https://github.com/axios/axios) for fetching data
 
 [styled-components](https://styled-components.com/docs) for styling
 
+[react-helmet-async]() for handling the title of each page
+
 [quill](https://quilljs.com/docs/quickstart/) for inner editor
+
+[qs]() for handling query-string
 
 ## Routes
 
