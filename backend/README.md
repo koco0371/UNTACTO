@@ -66,7 +66,6 @@ Nginx
 Nginx의 장점
  - 가벼움
  - Apache 서버에 디해 빠른 속도
-
 ```
 
 #### run
@@ -80,6 +79,13 @@ npm start
 nginx 실행시
 $ sudo systemctl start nginx
 - http://i3a103.p.ssafy.io/
+
+- Express와 react를 동시에 run하는 방법
+    1. npm install npm-run-all -D
+    2. package.json 파일 수정
+        "start": "npm-run-all --parallel start:**",
+        "start:client": "react-scripts start",
+        "start:server": "node ./server/app.js",
 ```
 
 #### routes
