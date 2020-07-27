@@ -30,7 +30,11 @@ api, styles 등 반복적으로 사용하는 store와 상관없는 코드
 
 - api
 
+API Server에 대한 연동을 정리
+
 - styles
+
+앱 내에서 사용할 color들을 palette 파일에 정리
 
 source: https://yeun.github.io/open-color/
 
