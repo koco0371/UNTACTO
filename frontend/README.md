@@ -150,6 +150,15 @@ id, title, content, createdAt, company
 	* 전화번호 나이 성별 총설문응답횟수 총상품교환수
 ```
 
+# Reference
+
+```
+cf.참고하기 좋은 사이트들 정리해주세요! 보일때마다 저도 올릴게요~
+[React arrangement](https://github.com/reactkr/learn-react-in-korean)
+[UI component](https://www.vobour.com/2019%EB%85%84-11%EA%B0%80%EC%A7%80-%EB%A6%AC%EC%95%A1%ED%8A%B8-ui-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%ED%94%8C%EB%A0%88%EC%9D%B4%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C-11-react)
+
+```
+
 # Usage
 
 ```
