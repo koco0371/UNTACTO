@@ -30,6 +30,8 @@ React를 기반으로 개발
 
 [redux-saga]() for redux middleware
 
+[redux-actions]() for handling redux action easily
+
 [redux-devtools-extension]() for check redux stuff in development stage
 
 [axios](https://github.com/axios/axios) for fetching data
