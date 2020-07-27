@@ -36,6 +36,8 @@ React를 기반으로 개발
 
 [axios](https://github.com/axios/axios) for fetching data
 
+[immer]() for changing store easily
+
 [styled-components](https://styled-components.com/docs) for styling
 
 [react-helmet-async]() for handling the title of each page
