@@ -16,13 +16,27 @@
 
 - WritePage
 
+### components
+
+page 컴포넌트를 구성하는 요소들
+
+### modules
+
+state와 action을 관리하는 redux modules
+
 ### lib
 
 api, styles 등 반복적으로 사용하는 store와 상관없는 코드
 
 - api
 
-- styled
+API Server에 대한 연동을 정리
+
+- styles
+
+앱 내에서 사용할 color들을 palette 파일에 정리
+
+source: https://yeun.github.io/open-color/
 
 ## Others
 
