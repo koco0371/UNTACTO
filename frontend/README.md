@@ -42,8 +42,6 @@ React를 기반으로 개발
 
 [react-helmet-async]() for handling the title of each page
 
-[quill](https://quilljs.com/docs/quickstart/) for inner editor
-
 [qs]() for handling query-string
 
 ## Routes
