@@ -34,8 +34,8 @@ const SignupForm = ({ history }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const { companyName, email, password, passwordConfirm } = form;
-    if ([companyName, email, password, passwordConfirm].includes('')) {
+    const { email, companyName, password, passwordConfirm } = form;
+    if ([email, companyName, password, passwordConfirm].includes('')) {
       setError('빈 칸을 모두 입력하세요.');
       return;
     }
@@ -47,7 +47,7 @@ const SignupForm = ({ history }) => {
       );
       return;
     }
-    dispatch(signup({ companyName, email, password }));
+    dispatch(signup({ email, companyName, password }));
   };
 
   // 처음 render될 때 form 초기화

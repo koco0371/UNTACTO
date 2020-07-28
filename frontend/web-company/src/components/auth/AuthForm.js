@@ -65,19 +65,20 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
       <h3>{text}</h3>
       <form onSubmit={onSubmit}>
         <StyledInput
-          autoComplete="companyName"
-          name="companyName"
-          placeholder="회사명"
+          autoComplete="email"
+          name="email"
+          placeholder="회사메일주소"
           onChange={onChange}
-          value={form.companyName}
+          value={form.email}
         />
+
         {type === 'signup' && (
           <StyledInput
-            autoComplete="email"
-            name="email"
-            placeholder="회사메일주소"
+            autoComplete="companyName"
+            name="companyName"
+            placeholder="회사명"
             onChange={onChange}
-            value={form.email}
+            value={form.companyName}
           />
         )}
 

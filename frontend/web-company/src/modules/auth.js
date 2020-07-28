@@ -33,15 +33,15 @@ export const initializeForm = createAction(INITIALIZE_FORM, (form) => form);
 
 export const signup = createAction(
   SIGNUP,
-  ({ companyName, email, password }) => ({
-    companyName,
+  ({ email, companyName, password }) => ({
     email,
+    companyName,
     password,
   }),
 );
 
-export const login = createAction(LOGIN, ({ companyName, password }) => ({
-  companyName,
+export const login = createAction(LOGIN, ({ email, password }) => ({
+  email,
   password,
 }));
 
@@ -56,13 +56,13 @@ export function* authSaga() {
 // initial state
 const initialState = {
   signup: {
-    companyName: '',
     email: '',
+    companyName: '',
     password: '',
     passwordConfirm: '',
   },
   login: {
-    companyName: '',
+    email: '',
     password: '',
   },
   auth: null,
