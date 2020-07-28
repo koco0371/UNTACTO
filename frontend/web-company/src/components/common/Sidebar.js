@@ -27,7 +27,7 @@ const Wrapper = styled(VerticalResponsive)`
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   div {
-    transition: color 0.5s linear;
+    transition: color 0.3s linear;
     &:hover {
       color: ${palette.gray[9]};
     }
@@ -42,12 +42,6 @@ const Wrapper = styled(VerticalResponsive)`
   div + div {
     margin-top: 0.75rem;
   }
-`;
-
-const Spacer = styled.div`
-  height: 100px;
-  width: 300px;
-  background: black;
 `;
 
 const Sidebar = () => {

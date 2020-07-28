@@ -75,8 +75,13 @@ const SignupForm = ({ history }) => {
   useEffect(() => {
     if (user) {
       history.push('/');
+      try {
+        localStorage.setItem('user', JSON.stringify(user));
+      } catch (e) {
+        console.log('localStorage is not working');
+      }
     }
-  }, [user]);
+  }, [history, user]);
 
   return (
     <AuthForm

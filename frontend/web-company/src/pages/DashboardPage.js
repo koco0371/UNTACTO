@@ -1,12 +1,12 @@
 import React from 'react';
 import Sidebar from '../components/common/Sidebar';
-import Header from '../components/common/Header';
 import Main from '../components/common/Main';
+import HeaderContainer from '../containers/common/HeaderContainer';
 
 const DashboardPage = () => {
   return (
     <>
-      <Header />
+      <HeaderContainer />
       <Sidebar />
       <Main>Hi</Main>
     </>
