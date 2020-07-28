@@ -8,7 +8,7 @@ const DashboardPage = () => {
     <>
       <HeaderContainer />
       <Sidebar />
-      <Main>Hi</Main>
+      <Main>hello</Main>
     </>
   );
 };

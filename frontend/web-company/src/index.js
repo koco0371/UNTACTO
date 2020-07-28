@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import Hello from './Hello';
 import './index.css';
 import App from './App';
 // BrowerRouter를 이용한 routing
