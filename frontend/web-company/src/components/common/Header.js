@@ -53,7 +53,7 @@ const Header = ({ user, onLogout }) => {
           </Link>
           {user ? (
             <div className="right">
-              <UserInfo>{user.username}</UserInfo>
+              <UserInfo>{user.companyName}</UserInfo>
               <Button onLogout={onLogout}>로그아웃</Button>
             </div>
           ) : (
