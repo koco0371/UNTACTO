@@ -1,7 +1,18 @@
 import React from 'react';
+import HeaderContainer from '../containers/common/HeaderContainer';
+import Sidebar from '../components/common/Sidebar';
+import Editor from '../components/write/Editor';
+import KioskBox from '../components/write/KioskBox';
 
 const WritePage = () => {
-  return <div>설문 작성</div>;
+  return (
+    <>
+      <HeaderContainer />
+      <Sidebar />
+      <Editor />
+      <KioskBox />
+    </>
+  );
 };
 
 export default WritePage;
