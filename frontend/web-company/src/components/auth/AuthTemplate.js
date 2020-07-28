@@ -12,7 +12,7 @@ const AuthTemplateBlock = styled.div`
   top: 0;
   bottom: 0;
   right: 0;
-  background: ${palette.gray[2]};
+  background: ${palette.indigo[1]};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,10 +21,13 @@ const AuthTemplateBlock = styled.div`
 
 const WhiteBox = styled.div`
   .logo-area {
-    font-family: 'Gugi';
+    font-family: 'Gugi', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
     display: block;
     padding-bottom: 2rem;
     text-align: center;
+    font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 2px;
   }

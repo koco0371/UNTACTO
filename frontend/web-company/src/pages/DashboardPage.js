@@ -1,17 +1,15 @@
 import React from 'react';
-import Button from '../components/common/Button';
+import Sidebar from '../components/common/Sidebar';
+import Header from '../components/common/Header';
+import Main from '../components/common/Main';
 
 const DashboardPage = () => {
   return (
-    <div>
-      <Button>Button</Button>
-      <br />
-      <Button red>Button</Button>
-      <br />
-      <Button indigo>Button</Button>
-      <br />
-      <Button fullWidth>Button</Button>
-    </div>
+    <>
+      <Header />
+      <Sidebar />
+      <Main>Hi</Main>
+    </>
   );
 };
 
