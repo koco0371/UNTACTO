@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Main from '../common/Main';
+import changeField from '../../modules/write';
 
 const KioskBoxBlock = styled(Main)`
   position: absolute;
@@ -14,6 +16,15 @@ const KioskBoxBlock = styled(Main)`
     color: ${palette.gray[8]};
     margin-top: 0;
     margin-bottom: 0.5rem;
+  }
+  .selected-kiosk {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    border-radius: 15px;
+    border: 1px solid ${palette.indigo[5]};
   }
 `;
 
@@ -31,44 +42,47 @@ const KioskListBlock = styled.div`
   margin-top: 0.5rem;
 `;
 
-const KioskItem = ({ kiosk }) => <Kiosk>{kiosk.location}</Kiosk>;
+const KioskItem = ({ kiosk, onChangeKiosk }) => {
+  const onClickKiosk = (e) => {
+    onChangeKiosk({ key: 'selectedKiosk', value: e.target.value });
+  };
+  return <Kiosk onClick={onClickKiosk}>{kiosk.location}</Kiosk>;
+};
 
-const KioskList = ({ kiosks }) => (
-  <KioskListBlock>
-    {kiosks.map((kiosk) => (
-      <KioskItem key={kiosk.kioskId} kiosk={kiosk} />
-    ))}
-  </KioskListBlock>
-);
+const KioskList = ({ kiosks, onChangeField }) => {
+  const onChangeKiosk = useCallback((payload) => onChangeField(payload));
+  return (
+    <KioskListBlock>
+      {kiosks.map((kiosk) => (
+        <KioskItem
+          key={kiosk.kioskId}
+          kiosk={kiosk}
+          onChangeKiosk={onChangeKiosk}
+        />
+      ))}
+    </KioskListBlock>
+  );
+};
 
-const KioskBox = () => {
-  const kiosks = [
-    {
-      kioskId: 1,
-      location: '역삼',
-    },
-    {
-      kioskId: 2,
-      location: '강남',
-    },
-    {
-      kioskId: 3,
-      location: '홍대',
-    },
-    {
-      kioskId: 4,
-      location: '신촌',
-    },
-    {
-      kioskId: 5,
-      location: '종로',
-    },
-  ];
+const KioskBox = ({ kiosks }) => {
+  // kiosks는 write 페이지 들어오면 api 당겨오기
+  // kiosks와 selectedKiosk는 모두 redux로 관리
+  const dispatch = useDispatch();
+  const { selectedKiosk } = useSelector(({ write }) => ({
+    selectedKiosk: write.selectedKiosk,
+  }));
+  const onChangeField = useCallback(
+    (payload) => dispatch(changeField(payload)),
+    [dispatch],
+  );
 
   return (
     <KioskBoxBlock>
-      <h4>KIOSK</h4>
-      <KioskList kiosks={kiosks} />
+      {selectedKiosk ? <h4>선택한 KIOSK</h4> : <h4>KIOSK 를 선택해주세요</h4>}
+      {selectedKiosk && (
+        <div className="selected-kiosk">{selectedKiosk.location}</div>
+      )}
+      <KioskList kiosks={kiosks} onChangeField={onChangeField} />
     </KioskBoxBlock>
   );
 };

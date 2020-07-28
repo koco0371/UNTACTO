@@ -21,6 +21,9 @@ const VideoForm = styled.form`
   height: 50px;
   width: 100%;
   border: 1px solid ${palette.indigo[4]};
+  &:hover {
+    border: 1px solid ${palette.indigo[7]};
+  }
   .video-label {
     height: 100%;
     display: flex;
@@ -37,7 +40,15 @@ const VideoForm = styled.form`
       font-family: 'Nanum-Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI',
         'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
         'Helvetica Neue', sans-serif;
+      &:hover {
+        color: ${palette.indigo[7]};
+        font-weight: bold;
+      }
     }
+  }
+  .video-name {
+    margin-top: 1rem;
+    color: ${palette.gray[9]};
   }
   .video-input {
     position: absolute;
@@ -51,6 +62,7 @@ const VideoForm = styled.form`
   }
 `;
 const DescriptionInput = styled.textarea`
+  border: 1px solid ${palette.gray[6]};
   padding: 0.75rem;
   margin-bottom: 2rem;
   width: 100%;
@@ -62,11 +74,29 @@ const DescriptionInput = styled.textarea`
     'Helvetica Neue', sans-serif;
 `;
 
-const Editor = () => {
+const Editor = ({ onChangeField, title, description, video }) => {
+  const onChangeTitle = (e) => {
+    onChangeField({ key: 'title', value: e.target.value });
+  };
+  const onChangeDescription = (e) => {
+    onChangeField({ key: 'description', value: e.target.value });
+  };
+  const onChangeVideo = (e) => {
+    onChangeField({ key: 'video', value: e.target.value });
+  };
+
   return (
     <EditorBlock>
-      <TitleInput placeholder="제목을 입력하세요" />
-      <DescriptionInput placeholder="영상에 대해 간략히 설명해주세요" />
+      <TitleInput
+        placeholder="제목을 입력하세요"
+        onChange={onChangeTitle}
+        value={title}
+      />
+      <DescriptionInput
+        placeholder="영상에 대해 간략히 설명해주세요"
+        onChange={onChangeDescription}
+        value={description}
+      />
       <VideoForm>
         <div className="video-label">
           <label htmlFor="file">
@@ -80,7 +110,10 @@ const Editor = () => {
           accept="video/*"
           id="file"
           className="video-input"
+          onChange={onChangeVideo}
+          value={video}
         />
+        {video && <div className="video-name">선택된 영상: {video}</div>}
       </VideoForm>
     </EditorBlock>
   );
