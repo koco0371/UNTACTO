@@ -6,6 +6,13 @@ import Main from '../common/Main';
 const EditorBlock = styled(Main)`
   padding-top: 5rem;
   padding-bottom: 5rem;
+  .select-label {
+    margin-top: 5rem;
+    font-size: 1.125rem;
+    font-family: 'Nanum-Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
+  }
 `;
 const TitleInput = styled.input`
   font-size: 2.5rem;
@@ -48,7 +55,12 @@ const VideoForm = styled.form`
   }
   .video-name {
     margin-top: 1rem;
+    margin-bottom: 2rem;
     color: ${palette.gray[9]};
+    font-size: 1rem;
+    font-family: 'Nanum-Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
   }
   .video-input {
     position: absolute;
@@ -73,8 +85,26 @@ const DescriptionInput = styled.textarea`
     'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif;
 `;
+const KioskSelect = styled.select`
+  margin-top: 1rem;
+  width: 200px;
+  padding: 0.8em 0.5em;
+  font-size: 0.875rem;
+  font-family: 'Nanum-Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  background: url('https://res.cloudinary.com/kennycld/image/upload/v1595989836/samples/arrowiosdownward_111110_wftel9.png')
+    no-repeat 95% 50%;
+  background-size: contain;
+  border: 1px solid #999;
+  border-radius: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+`;
 
-const Editor = ({ onChangeField, title, description, video }) => {
+const Editor = ({ onChangeField, title, description, video, kiosks }) => {
   const onChangeTitle = (e) => {
     onChangeField({ key: 'title', value: e.target.value });
   };
@@ -83,6 +113,9 @@ const Editor = ({ onChangeField, title, description, video }) => {
   };
   const onChangeVideo = (e) => {
     onChangeField({ key: 'video', value: e.target.value });
+  };
+  const onChangeSelect = (e) => {
+    onChangeField({ key: 'selectedKiosk', value: e.target.value });
   };
 
   return (
@@ -115,6 +148,15 @@ const Editor = ({ onChangeField, title, description, video }) => {
         />
         {video && <div className="video-name">선택된 영상: {video}</div>}
       </VideoForm>
+      <div className="select-label">Kiosk를 선택해주세요</div>
+      <KioskSelect onChange={onChangeSelect}>
+        {kiosks &&
+          kiosks.map((kiosk) => (
+            <option key={kiosk.kioskId} value={kiosk.kioskId}>
+              {kiosk.location}
+            </option>
+          ))}
+      </KioskSelect>
     </EditorBlock>
   );
 };

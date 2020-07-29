@@ -5,10 +5,11 @@ import { changeField, initialize } from '../../modules/write';
 
 const EditorContainer = () => {
   const dispatch = useDispatch();
-  const { title, description, video } = useSelector(({ write }) => ({
+  const { title, description, video, kiosks } = useSelector(({ write }) => ({
     title: write.title,
     description: write.description,
     video: write.video,
+    kiosks: write.kiosks,
   }));
   const onChangeField = useCallback(
     (payload) => dispatch(changeField(payload)),
@@ -25,6 +26,7 @@ const EditorContainer = () => {
       title={title}
       description={description}
       video={video}
+      kiosks={kiosks}
     />
   );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import VerticalResponsive from './VerticalResponsive';
 import palette from '../../lib/styles/palette';
 
@@ -49,11 +50,21 @@ const Sidebar = () => {
     <>
       <SidebarBlock>
         <Wrapper>
-          <div>Dashboard</div>
-          <div>Surveys</div>
-          <div>Create Survey</div>
-          <div>Members</div>
-          <div>Help</div>
+          <div>
+            <Link to="/">Dashboard</Link>
+          </div>
+          <div>
+            <Link to="/survey">Surveys</Link>
+          </div>
+          <div>
+            <Link to="/write">Create Survey</Link>
+          </div>
+          <div>
+            <Link to="/">Member</Link>
+          </div>
+          <div>
+            <Link to="/">Help</Link>
+          </div>
         </Wrapper>
       </SidebarBlock>
     </>
