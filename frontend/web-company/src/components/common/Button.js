@@ -12,6 +12,9 @@ const buttonStyle = css`
   color: white;
   outline: none;
   cursor: pointer;
+  font-family: 'Nanum-Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
 
   background: ${palette.gray[8]};
   &:hover {
