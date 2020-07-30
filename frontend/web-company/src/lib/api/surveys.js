@@ -5,6 +5,9 @@ import client from './client';
 export const writeSurvey = ({ title, description, video, selectedKiosk }) =>
   client.post('/api/surveys', { title, description, video, selectedKiosk });
 
+// 설문 디테일
+export const readSurvey = (id) => client.get(`/api/surveys/${id}`);
+
 // 설문 리스트
 export const listSurveys = ({ companyName }) => {
   const queryString = qs.stringify({

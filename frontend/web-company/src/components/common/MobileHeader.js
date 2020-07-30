@@ -2,16 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Button from './Button';
+import palette from '../../lib/styles/palette';
 
-const HeaderBlock = styled.div`
+const MobileHeaderBlock = styled.div`
+  display: none;
   position: fixed;
+  top: 0;
   width: 100%;
-  background: white;
+  background: ${palette.indigo[5]};
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
   margin: 0 auto;
+  color: ${palette.indigo[0]};
   z-index: 10;
   @media (max-width: 768px) {
-    display: none;
+    display: block;
   }
 `;
 
@@ -35,6 +39,14 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
   }
+  .menu-btn {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
 `;
 
 const Spacer = styled.div`
@@ -46,11 +58,14 @@ const UserInfo = styled.div`
   margin-right: 1rem;
 `;
 
-const Header = ({ user, onLogout }) => {
+const MobileHeader = ({ user, onLogout }) => {
   return (
     <>
-      <HeaderBlock>
+      <MobileHeaderBlock>
         <Wrapper>
+          <span className="menu-btn">
+            <i className="fas fa-bars fa-2x"></i>
+          </span>
           <Link to="/" className="logo">
             UNTACTO
           </Link>
@@ -65,10 +80,10 @@ const Header = ({ user, onLogout }) => {
             </div>
           )}
         </Wrapper>
-      </HeaderBlock>
+      </MobileHeaderBlock>
       <Spacer />
     </>
   );
 };
 
-export default Header;
+export default MobileHeader;
