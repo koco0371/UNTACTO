@@ -31,8 +31,7 @@ router.post('/', function (req, res, next) {
 					result: 'ok',
 					token
 				});
-				res.status(200);
-            } else {
+			} else {
 				res.status(403).json({
 					message: err
 				})
