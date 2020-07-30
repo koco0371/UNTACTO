@@ -9,7 +9,6 @@ router.use(cookieParser());
 
 router.get('/', function (req, res, next) {
 	var user = req.cookies.user;
-	//res.redirect('/');
 	res.send(user);
 });
 
