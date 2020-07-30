@@ -8,9 +8,8 @@ var mysql = require('mysql');
 router.use(cookieParser());
 
 router.get('/', function (req, res, next) {
-	console.log('check');
-	var user = req.cookies.user;
-	console.log(req.cookies.user);
+	console.log('logout');
+	var user = null;
 	res.send(user);
 	res.redirect('/');
 });
