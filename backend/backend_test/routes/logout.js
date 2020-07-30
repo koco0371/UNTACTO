@@ -10,7 +10,7 @@ router.use(cookieParser());
 router.post('/', function (req, res, next) {
 	console.log('logout');
 	res.clearCookie('user');
-res.redirect('/');
+    res.redirect('/');
 });
 
 module.exports = router;
