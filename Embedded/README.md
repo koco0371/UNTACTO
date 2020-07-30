@@ -20,6 +20,7 @@ KIOSK에서 투표 기능을 개발
 |     Name     |            Info             |
 | :----------: | :----------------------------: |
 | Raspberry Pi | Raspberry Pi 3 Model B Rev 1.2 |
+| Arduino |  |
 | LCD Monitor | 7inch, Resolution : 1920 x 1080 |
 
 ### SW
@@ -31,6 +32,7 @@ KIOSK에서 투표 기능을 개발
 | QT Creator | 4.11.1                                                                                   |
 |   MYSQL    | Ver 15.1 Distrib 10.1.45-MariaDB, for debian-linux-gnueabihf (armv7l) using readline 5.2 |
 | OpenCV | 4.1.0 |
+| Python | 3.7.3 |
 
 ## Check-Version
 
@@ -70,17 +72,64 @@ sudo apt-get install python3-pyqt5.qtsql
 pip3 install imutils
 pip3 uninstall opencv-python
 pip3 install opencv-contrib-python==4.1.0.25
+pip3 install 
 ```
 
 ## Submit Data
 ```
-개인 정보
-	나이 성별 전화번호
+	age gender contact
 
-감정 정보
-	anger contempt disgust fear happiness neutral sadness surprise
+
+	time(sec) no_look anger contempt disgust fear happiness neutral sadness surprise
 
 ```
+
+## Pin Setting
+*Raspberry Pi*
+| Connection | Name | Pin | Pin | Name | Connection |
+| :--: | :--: | :--: | :--: | :--:| :--: |
+|  | 3v3 | 1 | 2 | 5v | ● |
+| Arduino A4 | GPIO2 | 3 | 4 | 5V | ● |
+| Arudino A5 | GPIO3 | 5 | 6 | GND | ● |
+|  | GPIO4 | 7 | 8 | GPIO14 |  |
+| ● | GND | 9 | 10 | GPIO15 |  |
+|  | GPIO17 | 11 | 12 | GPIO18 |  |
+|  | GPIO27 | 13 | 14 | GND |  |
+|  | GPIO22 | 15 | 16 | GPIO23 |  |
+|  | 3v3 | 17 | 18 | GPIO24 |  |
+|  | GPIO10 | 19 | 20 | GND |  |
+|  | GPIO9 | 21 | 22 | GPIO25 |  |
+|  | GPIO11 | 23 | 24 | GPIO8 |  |
+|  | GND | 25 | 26 | GPIO7 |  |
+|  | ID_SD | 27 | 28 | ID_SC |  |
+|  | GPIO5 | 29 | 30 | GND |  |
+|  | GPIO6 | 31 | 32 | GPIO12 |  |
+|  | GPIO13 | 33 | 34 | GND |  |
+|  | GPIO19 | 35 | 36 | GPIO16 |  |
+|  | GPIO26 | 37 | 38 | GPIO20 |  |
+|  | GND | 39 | 40 | GPIO21 |  |
+
+|  |  |
+
+*Arduino*
+| Connection | Name | Pin | Pin | Name | Connection |
+| :--: | :--: | :--: | :--: | :--:| :--: |
+|  | IOREF | D13 |  |
+|  | RESET | D12 |  |
+|  | 3.3v | D11 |  |
+| ● | 5v | D10 |  |
+| ● | GND | D9 |  |
+|  | GND | D8 |  |
+|  | Vin | D7 |  |
+|  | A0 | D6 | DS1302 DAT |
+|  | A1 | D5 | DS1302 CLK |
+|  | A2 | D4 | DS1302 RST |
+|  | A3 | D3 | DHT11 Data |
+| GPIO2 | A4 | D2 |  |
+| GPIO3 | A5 | D1 |  | 
+
+
+
 
 
 # Usage
@@ -94,4 +143,5 @@ pip3 install opencv-contrib-python==4.1.0.25
 ```
 
 ```
+
 

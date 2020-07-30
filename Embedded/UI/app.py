@@ -39,13 +39,13 @@ class dataThread(QThread):
         super().__init__()
         self.i2c = SMBus(1)
         self.addr = 0x08
-        self.numb = 0
+        self.numb = 1
 
         print("Sending Data : {}".format(self.numb))
         self.str_data = ""
+        self.i2c.write_byte(self.addr, self.numb)
     def run(self):
         while True:
-            self.i2c.write_byte(self.addr, self.numb)
             self.numb = self.numb + 1
             try:
                 b = self.i2c.read_i2c_block_data(self.addr, 0, 30)
@@ -75,18 +75,44 @@ class cameraThread(QThread):
         self.cam.set(3, 480)
         self.cam.set(4, 320)
 
+
     def run(self):
+        now = time.localtime()
+        idx = 110
+        bef = 0
+        self.flag = False
+        self.sec = now.tm_sec
         while True:
             ret, self.img = self.cam.read()
-            self.printImage(self.img)
+            
+            if int(idx / 5) != int(bef / 5) :  
+                self.flag = True
+            else :
+                self.flag = False
+            print("idx : %d, bef : %d"%(idx, bef))
+            print(self.flag)
+            self.printImage(self.img, int(idx/5), self.flag)
+            now = time.localtime()
+            print ("%d, %d"%(self.sec, now.tm_sec))
+            if self.sec != now.tm_sec :
+                idx = 0
+                self.sec = now.tm_sec
+            bef = idx
+            idx = idx +1    
+            
             QTest.qWait(10)
 
-    def printImage(self, imgBGR):
+    def printImage(self, imgBGR, idx, flag):
+        now = time.localtime()
+        self.str_file = ("./img/%04d%02d%02d%02d%02d%02d%02d.jpg"%(now.tm_year, now.tm_mon, now.tm_mday, now.tm_hour, now.tm_min, now.tm_sec, idx))
+        print(self.str_file)
         imgRGB = cv2.cvtColor(imgBGR, cv2.COLOR_BGR2RGB)
         h, w, byte = imgRGB.shape
         img = QImage(imgRGB, w, h, byte * w, QImage.Format_RGB888)
         img = QPixmap(img)
-        cv2.imwrite('./cam.jpg', imgRGB)
+        if flag == True :
+            pass
+            cv2.imwrite(self.str_file, imgRGB)
         self.mySignal.emit(img)
 
 
@@ -204,11 +230,14 @@ class VideoPlayer(QWidget):
         # self.humiLabel.setText(gtnData[2])
         
     def setData(self, str_data) :
-        gtnData = str_data.split()
-        self.playTimeLabel.setText("진행 시간  " + gtnData[0])
-        self.tempLabel.setText("현재 온도  " + gtnData[1] + "°C")
-        self.humiLabel.setText("현재 습도  " + gtnData[2] + "%")
-    
+        try:
+            gtnData = str_data.split()
+            self.playTimeLabel.setText("진행 시간  " + gtnData[0])
+            self.tempLabel.setText("현재 온도  " + gtnData[1] + "°C")
+            self.humiLabel.setText("현재 습도  " + gtnData[2] + "%")
+        except:
+            print("RECEIVE DATA : {}".format(str_data))
+
 
     def lsj(self):
         fileName = "/home/pi/qt/video/output.h264"
@@ -221,16 +250,6 @@ class VideoPlayer(QWidget):
             self.mediaPlayer.pause()
         else:
             self.mediaPlayer.play()
-
-
-# if __name__ == '__main__':
-#     import sys
-#     app = QApplication(sys.argv)
-#     player = VideoPlayer()
-#     player.setWindowTitle("Player")
-#     player.resize(600, 400)
-#     player.show()
-#     sys.exit(app.exec_())
 
 def main():
     app = QApplication([]) 
