@@ -3,6 +3,7 @@ var express = require('express');
 var router = express.Router();
 var jwt = require('jsonwebtoken');
 var mysql = require('mysql');
+
 const secret="ThISisSecRETKeY";
 
 router.post('/', function (req, res, next) {
@@ -20,12 +21,12 @@ router.post('/', function (req, res, next) {
     connection.query('select * from company where email=\'' + email + '\' and password=\'' + password + '\'', function (err, rows, fields) {
         if (!err) {
             if (rows[0]!=undefined) {
+				console.log("login");
 				const token = jwt.sign({
-					companyId :rows[0]['companyId']
+					id:rows[0]['companyId'],
+					exp:Math.floor(Date.now()/1000) + (60*60)
 				},
-				secret,{
-					expiresIn: '1hour'
-				});
+				secret);
 				res.cookie('user', token);
 				res.json({
 					result: 'ok',

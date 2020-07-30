@@ -28,7 +28,7 @@ router.post('/', function (req, res, next) {
 					res.send("success");
 				} else {
 					console.log(err);
-					res.send('failed');
+					res.status(409).send('failed');
 				}
 			});
 		} else {
