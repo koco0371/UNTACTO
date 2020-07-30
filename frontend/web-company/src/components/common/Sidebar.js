@@ -13,6 +13,9 @@ const SidebarBlock = styled.div`
   background: ${palette.indigo[5]};
   box-shadow: 2px 4px 2px 0px rgba(0, 0, 0, 0.08);
   display: flex;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const Wrapper = styled(VerticalResponsive)`

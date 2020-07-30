@@ -1,7 +1,18 @@
 import React from 'react';
+import HeaderContainer from '../containers/common/HeaderContainer';
+import Sidebar from '../components/common/Sidebar';
+import SurveyViewerContainer from '../containers/survey/SurveyViewerContainer';
+import MobileHeaderContainer from '../containers/common/MobileHeaderContainer';
 
 const SurveyPage = () => {
-  return <div>개별 설문</div>;
+  return (
+    <>
+      <HeaderContainer />
+      <MobileHeaderContainer />
+      <Sidebar />
+      <SurveyViewerContainer />
+    </>
+  );
 };
 
 export default SurveyPage;
