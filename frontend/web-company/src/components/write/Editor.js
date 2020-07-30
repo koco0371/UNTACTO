@@ -112,7 +112,7 @@ const Editor = ({ onChangeField, title, description, video, kiosks }) => {
     onChangeField({ key: 'description', value: e.target.value });
   };
   const onChangeVideo = (e) => {
-    onChangeField({ key: 'video', value: e.target.value });
+    onChangeField({ key: 'video', value: e.target.files[0] });
   };
   const onChangeSelect = (e) => {
     onChangeField({ key: 'selectedKiosk', value: e.target.value });
@@ -130,7 +130,7 @@ const Editor = ({ onChangeField, title, description, video, kiosks }) => {
         onChange={onChangeDescription}
         value={description}
       />
-      <VideoForm>
+      <VideoForm encType="multipart/form-data">
         <div className="video-label">
           <label htmlFor="file">
             <i className="fas fa-upload"></i>
@@ -144,9 +144,8 @@ const Editor = ({ onChangeField, title, description, video, kiosks }) => {
           id="file"
           className="video-input"
           onChange={onChangeVideo}
-          value={video}
         />
-        {video && <div className="video-name">선택된 영상: {video}</div>}
+        {video && <div className="video-name">선택된 영상: </div>}
       </VideoForm>
       <div className="select-label">Kiosk를 선택해주세요</div>
       <KioskSelect onChange={onChangeSelect}>
