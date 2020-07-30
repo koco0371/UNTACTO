@@ -3,7 +3,7 @@ const path = require('path');
 const os = require('os');
 const app = express();
 const bodyParser = require('body-parser');
-const port =process.env.PORT || 3002;
+const port =process.env.PORT || 3003;
 
 const route = require('../routes/index');
 const createSurveyRouter = require('../routes/beforeCreateSurvey');
@@ -18,7 +18,7 @@ app.use('/api/auth/login', loginRouter);
 app.use('/api/auth/logout', logoutRouter);
 app.use('/api/auth/check', checkRouter);
 app.use('/api/surveys',createSurveyRouter);
-app.use('/api/surveys',express.static('uploads'));
+//app.use('/api/surveys',express.static('uploads'));
 
 app.listen(port, ()=>{
     console.log(`express is running on ${port}`);
