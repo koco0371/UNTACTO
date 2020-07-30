@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Main from '../common/Main';
 import palette from '../../lib/styles/palette';
+import AreaRangeChart from '../chart/AreaRangeChart';
+import DonutChart from '../chart/DonutChart';
+import BarChart from '../chart/BarChart';
 
 const AnalysisViewerBlock = styled(Main)`
   background: ${palette.indigo[0]};
@@ -33,9 +36,15 @@ const AnalysisViewer = () => {
     <>
       <AnalysisViewerBlock>
         <h2>CompanyName의 설문 종합</h2>
-        <AnalysisItem className="one">one</AnalysisItem>
-        <AnalysisItem className="two">two</AnalysisItem>
-        <AnalysisItem className="three">three</AnalysisItem>
+        <AnalysisItem className="one">
+          <AreaRangeChart />
+        </AnalysisItem>
+        <AnalysisItem className="two">
+          <DonutChart />
+        </AnalysisItem>
+        <AnalysisItem className="three">
+          <BarChart />
+        </AnalysisItem>
       </AnalysisViewerBlock>
     </>
   );
