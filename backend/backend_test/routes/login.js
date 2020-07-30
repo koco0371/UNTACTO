@@ -1,8 +1,9 @@
 /login.js*/
 var express = require('express');
 var router = express.Router();
-
+var jwt = require('jsonwebtoken');
 var mysql = require('mysql');
+const secret="ThISisSecRETKeY";
 
 router.post('/', function (req, res, next) {
     var email = req.body['email'];
@@ -15,18 +16,32 @@ router.post('/', function (req, res, next) {
         database: 'project1'
 	});
     connection.connect();
-
+	
     connection.query('select * from company where email=\'' + email + '\' and password=\'' + password + '\'', function (err, rows, fields) {
         if (!err) {
             if (rows[0]!=undefined) {
-                res.send('email : ' + rows[0]['email'] + '<br>' +
-                    'password : ' + rows[0]['password']);
+				const token = jwt.sign({
+					companyId :rows[0]['companyId']
+				},
+				secret,{
+					expiresIn: '1hour'
+				});
+				res.cookie('user', token);
+				res.json({
+					result: 'ok',
+					token
+				});
+				res.status(200);
             } else {
-                res.send('no data');
+				res.status(403).json({
+					message: err
+				})
             }
 
         } else {
-            res.send('error : ' + err);
+			res.status(403).json({
+				message: err
+			})
         }
     });
 });

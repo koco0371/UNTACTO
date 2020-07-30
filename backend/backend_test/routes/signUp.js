@@ -22,9 +22,7 @@ router.post('/', function (req, res, next) {
 		if(!err){
 			console.log("select success");
 			sql = sql + (rows[0]['cnt']);
-			console.log(sql);
 			sql = sql +  ",'"+companyName+"','"+password+"','"+email+"');";
-			console.log(sql);
 			connection.query(sql, function (err) {
 		        if (!err) {
 					res.send("success");
