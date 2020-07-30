@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Button from './Button';
@@ -49,21 +49,42 @@ const Wrapper = styled.div`
   }
 `;
 
-const Spacer = styled.div`
-  height: 4rem;
-`;
-
 const UserInfo = styled.div`
   font-weight: bold;
   margin-right: 1rem;
 `;
 
+const Spacer = styled.div`
+  height: 4rem;
+`;
+
+const Menus = styled.div`
+  background: ${palette.indigo[4]};
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Gugi', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+`;
+
 const MobileHeader = ({ user, onLogout }) => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
   return (
     <>
       <MobileHeaderBlock>
         <Wrapper>
-          <span className="menu-btn">
+          <span
+            className="menu-btn"
+            onClick={() => {
+              setIsNavOpen(!isNavOpen);
+            }}
+          >
             <i className="fas fa-bars fa-2x"></i>
           </span>
           <Link to="/" className="logo">
@@ -80,7 +101,21 @@ const MobileHeader = ({ user, onLogout }) => {
             </div>
           )}
         </Wrapper>
+        {isNavOpen && (
+          <Menus>
+            <div className="menu-item">
+              <Link to="/">Dashboard</Link>
+            </div>
+            <div className="menu-item">
+              <Link to="/survey">Surveys</Link>
+            </div>
+            <div className="menu-item">
+              <Link to="/write">Create Survey</Link>
+            </div>
+          </Menus>
+        )}
       </MobileHeaderBlock>
+
       <Spacer />
     </>
   );

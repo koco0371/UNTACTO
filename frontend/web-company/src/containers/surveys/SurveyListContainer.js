@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import qs from 'qs';
 import { withRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import SurveyList from '../../components/surveys/SurveyList';
@@ -7,7 +6,7 @@ import { listSurveys } from '../../modules/surveys';
 
 const SurveyListContainer = ({ match }) => {
   const dispatch = useDispatch();
-  const { surveys, error, loading, user } = useSelector(
+  const { surveys, error, loading } = useSelector(
     ({ surveys, loading, user }) => ({
       surveys: surveys.surveys,
       error: surveys.error,
