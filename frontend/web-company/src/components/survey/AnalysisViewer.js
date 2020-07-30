@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Main from '../common/Main';
 import palette from '../../lib/styles/palette';
-import AreaRangeChart from '../chart/AreaRangeChart';
-import DonutChart from '../chart/DonutChart';
-import BarChart from '../chart/BarChart';
+import AreaRangeChart from '../charts/AreaRangeChart';
+import DonutChart from '../charts/DonutChart';
+import BarChart from '../charts/BarChart';
 
 const AnalysisViewerBlock = styled(Main)`
   background: ${palette.indigo[0]};
