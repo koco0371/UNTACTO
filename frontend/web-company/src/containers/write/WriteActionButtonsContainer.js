@@ -27,14 +27,14 @@ const WriteActionButtonsContainer = ({ history }) => {
       alert('빈칸을 채워주세요');
       return;
     }
-    dispatch(
-      writeSurvey({
-        title,
-        description,
-        video,
-        selectedKiosk,
-      }),
-    );
+
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('description', description);
+    formData.append('video', video);
+    formData.append('selectedKiosk', selectedKiosk);
+
+    dispatch(writeSurvey(formData));
   };
 
   const onCancel = () => {
@@ -43,7 +43,7 @@ const WriteActionButtonsContainer = ({ history }) => {
 
   useEffect(() => {
     if (survey) {
-      // const {surveyId, user} = post
+      // const { surveyId, user } = survey;
       history.push('/survey');
     }
     if (surveyError) {
