@@ -140,7 +140,7 @@ const Editor = ({ onChangeField, title, description, video, kiosks }) => {
         <input
           type="file"
           name="file"
-          accept="video/*"
+          accept="video/*, image/*"
           id="file"
           className="video-input"
           onChange={onChangeVideo}
