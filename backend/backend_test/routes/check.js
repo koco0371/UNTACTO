@@ -9,7 +9,13 @@ router.use(cookieParser());
 
 router.get('/', function (req, res, next) {
 	var user = req.cookies.user;
-	res.send(user);
+	var companyName = req.cookies.companyName;
+	var companyId = req.cookies.companyId;
+	res.json({
+		'user': user,
+		'companyName': companyName,
+		'companyId': companyId,
+	});
 });
 
 module.exports = router;
