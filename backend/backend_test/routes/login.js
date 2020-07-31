@@ -28,6 +28,8 @@ router.post('/', function (req, res, next) {
 				},
 				secret);
 				res.cookie('user', token);
+				res.cookie('companyName', rows[0]['companyName']);
+				res.cookie('companyId', rows[0]['companyId']);
 				res.json({
 					result: 'ok',
 					token
@@ -47,3 +49,4 @@ router.post('/', function (req, res, next) {
 });
 
 module.exports = router;
+
