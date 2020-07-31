@@ -5,6 +5,7 @@ import palette from '../../lib/styles/palette';
 import AreaRangeChart from '../charts/AreaRangeChart';
 import DonutChart from '../charts/DonutChart';
 import BarChart from '../charts/BarChart';
+import LineChart from '../charts/LineChart';
 
 const AnalysisViewerBlock = styled(Main)`
   display: grid;
@@ -100,19 +101,19 @@ const AnalysisViewer = (props) => {
       <AnalysisViewerBlock {...props}>
         <h2>설문 분석</h2>
         <AnalysisItem className="one">
-          <AreaRangeChart />
+          <LineChart />
         </AnalysisItem>
         <AnalysisItem className="two">
-          <DonutChart />
+          <LineChart />
         </AnalysisItem>
         <AnalysisItem className="three">
-          <BarChart />
+          <LineChart />
         </AnalysisItem>
         <AnalysisItem className="four">
-          <DonutChart />
+          <LineChart />
         </AnalysisItem>
         <AnalysisItem className="five">
-          <BarChart />
+          <LineChart />
         </AnalysisItem>
       </AnalysisViewerBlock>
     </>
