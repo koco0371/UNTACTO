@@ -90,8 +90,8 @@ pip3 install
 | Connection |   Name   | Pin | Pin |   Name   | Connection |
 | :--------: | :------: | :-: | :-: | :-------:| :--------: |
 |            |    3v3   |   1 | 2   |    5v    |      ●     |
-| Arduino A4 | GPIO2 | 3 | 4 | 5V | ● |
-| Arudino A5 | GPIO3 | 5 | 6 | GND | ● |
+| Arduino A4 | GPIO2 | 3 | 4 | 5V |  |
+| Arudino A5 | GPIO3 | 5 | 6 | GND |  |
 |  | GPIO4 | 7 | 8 | GPIO14 |  |
 | ● | GND | 9 | 10 | GPIO15 |  |
 |  | GPIO17 | 11 | 12 | GPIO18 |  |
@@ -128,8 +128,8 @@ pip3 install
 |  | A1 | D5 | DS1302 CLK |
 |  | A2 | D4 | DS1302 RST |
 |  | A3 | D3 | DHT11 Data |
-| GPIO2 | A4 | D2 |  |
-| GPIO3 | A5 | D1 |  | 
+| Pi GPIO2 | A4 | D2 |  |
+| Pi GPIO3 | A5 | D1 |  | 
 
 
 
