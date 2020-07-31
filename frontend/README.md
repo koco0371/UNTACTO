@@ -15,10 +15,34 @@ React를 기반으로 개발
 
 ### SW
 
-|    Name    | Version                                                                                  |
-| :--------: | :--------------------------------------------------------------------------------------- |
-|   React    | ...
-|   node.js  | v.12.18.2                                                                                   |
+|  Name   | Version   |
+| :-----: | :-------- |
+|  React  | ...       |
+| node.js | v.12.18.2 |
+
+### Library
+
+[react-router-dom](https://www.npmjs.com/package/react-router-dom) for routing
+
+[redux](https://redux.js.org/) for managing state
+
+[react-redux](https://react-redux.js.org/) for using redux with react
+
+[redux-saga]() for redux middleware
+
+[redux-actions]() for handling redux action easily
+
+[redux-devtools-extension]() for check redux stuff in development stage
+
+[axios](https://github.com/axios/axios) for fetching data
+
+[immer]() for changing store easily
+
+[styled-components](https://styled-components.com/docs) for styling
+
+[react-helmet-async]() for handling the title of each page
+
+[qs]() for handling query-string
 
 ## Routes
 
@@ -51,13 +75,13 @@ id, companyName, password, createdAt, surveys, (contacts)
 
 ```
 Survey
-id, title, location, video, description, company, createdAt, expiresAt answers
+id, title, location, video, description, company, createdAt, expiresAt, extraSurvey, answers
 ```
 
 - 설문 리스트 (필터)
 
   ```
-  GET  /surveys  query: { ?company, ?createdAt, ?expiresAt, ?location }
+  GET  /surveys  query: { company?, createdAt?, expiresAt?, location? }
   ```
 
 - 설문 생성
@@ -94,7 +118,7 @@ id, title, content, createdAt, company
 - 건의 리스트
 
   ```
-  GET  /contacts  query: { company, ?createdAt }
+  GET  /contacts  query: { company, createdAt? }
   ```
 
 - 건의 생성
@@ -121,17 +145,12 @@ id, title, content, createdAt, company
   DELETE  /contacts/:id
   ```
 
-# Usage
+## admin page
 
-```
-
-```
-
-## Submit Data
 ```
 [Admin Page] (관리자 계정으로 로그인 시)
 
-* 회원(관리자) 정보
+* 회원(관리자) 정보 <- login
 	* id pwd
 
 * 회사 정보 CRUD
@@ -144,13 +163,26 @@ id, title, content, createdAt, company
 	* 키오스크명 상태표시 위치 당일총설문횟수 등록된광고수
 
 * 설문자 정보 CRUD
-	* 전화번호 나이 성별 총설문응답횟수 총상품교환수    
+	* 전화번호 나이 성별 총설문응답횟수 총상품교환수
 ```
 
+# Reference
+
+```
+cf.참고하기 좋은 사이트들 정리해주세요! 보일때마다 저도 올릴게요~
+[React arrangement](https://github.com/reactkr/learn-react-in-korean)
+[UI component](https://www.vobour.com/2019%EB%85%84-11%EA%B0%80%EC%A7%80-%EB%A6%AC%EC%95%A1%ED%8A%B8-ui-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%ED%94%8C%EB%A0%88%EC%9D%B4%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C-11-react)
+
+```
+
+# Usage
+
+```
+
+```
 
 # License
 
 ```
 
 ```
-
