@@ -6,7 +6,7 @@ import { listSurveys } from '../../modules/surveys';
 
 const SurveyListContainer = ({ match }) => {
   const dispatch = useDispatch();
-  const { surveys, error, loading } = useSelector(
+  const { surveys, error, loading, companyId } = useSelector(
     ({ surveys, loading, user }) => ({
       surveys: surveys.surveys,
       error: surveys.error,
@@ -15,9 +15,8 @@ const SurveyListContainer = ({ match }) => {
     }),
   );
   useEffect(() => {
-    const { companyName } = match.params;
-    dispatch(listSurveys({ companyName }));
-  }, [dispatch, match.params]);
+    dispatch(listSurveys({ companyId }));
+  }, [dispatch]);
   return <SurveyList loading={loading} error={error} surveys={surveys} />;
 };
 

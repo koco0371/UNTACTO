@@ -25,21 +25,21 @@ router.post('/', function (req, res, next) {
 			sql = sql + (rows[0]['cnt']);
 			sql = sql +  ",'"+companyName+"','"+password+"','"+email+"');";
 			connection.query(sql, function (err) {
-		       	if (!err) {
+		        	if (!err) {
 					console.log("success");
 					console.log("login");
-					const token = jwt.sign({
-						id:rows[0]['companyId'],
-						exp:Math.floor(Date.now()/1000) + (60*60)
-					},
-					secret);
-					res.cookie('user', token);
-					res.cookie('companyName', rows[0]['companyName']);
-					res.cookie('companyId', rows[0]['companyId']);
-					res.json({
-						result: 'ok',
-						token
-					});
+				const token = jwt.sign({
+					id:rows[0]['companyId'],
+					exp:Math.floor(Date.now()/1000) + (60*60)
+				},
+				secret);
+				res.cookie('user', token);
+				res.cookie('companyName', rows[0]['companyName']);
+				res.cookie('companyId', rows[0]['companyId']);
+				res.json({
+					result: 'ok',
+					token
+				});;
 				} else {
 					console.log(err);
 					res.status(409).json({msg:err});

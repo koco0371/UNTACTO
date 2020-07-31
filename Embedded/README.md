@@ -17,22 +17,22 @@ KIOSK에서 투표 기능을 개발
 
 ### HW
 
-|     Name     |            Info             |
+|     Name     |            Info                |
 | :----------: | :----------------------------: |
 | Raspberry Pi | Raspberry Pi 3 Model B Rev 1.2 |
-| Arduino |  |
-| LCD Monitor | 7inch, Resolution : 1920 x 1080 |
+| Arduino      |                                |
+| LCD Monitor  | 7inch, Resolution : 1920 x 1080 |
 
 ### SW
 
 |    Name    | Version                                                                                  |
 | :--------: | :--------------------------------------------------------------------------------------- |
-|  Raspbian  | Linux raspberrypi 4.19.66-v7+ #1253 SMP Thu Aug 15 11:49:46 BST 2019 armv7l GNU/Linux |
+|  Raspbian  | Linux raspberrypi 4.19.66-v7+ #1253 SMP Thu Aug 15 11:49:46 BST 2019 armv7l GNU/Linux    |
 |     QT     | 5.14.1                                                                                   |
 | QT Creator | 4.11.1                                                                                   |
 |   MYSQL    | Ver 15.1 Distrib 10.1.45-MariaDB, for debian-linux-gnueabihf (armv7l) using readline 5.2 |
-| OpenCV | 4.1.0 |
-| Python | 3.7.3 |
+|   OpenCV   | 4.1.0                                                                                    |
+|   Python   | 3.7.3                                                                                 |
 
 ## Check-Version
 
@@ -85,12 +85,13 @@ pip3 install
 ```
 
 ## Pin Setting
-*Raspberry Pi*
-| Connection | Name | Pin | Pin | Name | Connection |
-| :--: | :--: | :--: | :--: | :--:| :--: |
-|  | 3v3 | 1 | 2 | 5v | ● |
-| Arduino A4 | GPIO2 | 3 | 4 | 5V | ● |
-| Arudino A5 | GPIO3 | 5 | 6 | GND | ● |
+* Raspberry Pi
+
+| Connection |   Name   | Pin | Pin |   Name   | Connection |
+| :--------: | :------: | :-: | :-: | :-------:| :--------: |
+|            |    3v3   |   1 | 2   |    5v    |      ●     |
+| Arduino A4 | GPIO2 | 3 | 4 | 5V |  |
+| Arudino A5 | GPIO3 | 5 | 6 | GND |  |
 |  | GPIO4 | 7 | 8 | GPIO14 |  |
 | ● | GND | 9 | 10 | GPIO15 |  |
 |  | GPIO17 | 11 | 12 | GPIO18 |  |
@@ -109,11 +110,13 @@ pip3 install
 |  | GPIO26 | 37 | 38 | GPIO20 |  |
 |  | GND | 39 | 40 | GPIO21 |  |
 
-|  |  |
 
-*Arduino*
-| Connection | Name | Pin | Pin | Name | Connection |
-| :--: | :--: | :--: | :--: | :--:| :--: |
+
+
+* Arduino
+
+| Connection  | Pin | Pin | Connection |
+| :---------: | :-: | :-: | :--: |
 |  | IOREF | D13 |  |
 |  | RESET | D12 |  |
 |  | 3.3v | D11 |  |
@@ -125,8 +128,8 @@ pip3 install
 |  | A1 | D5 | DS1302 CLK |
 |  | A2 | D4 | DS1302 RST |
 |  | A3 | D3 | DHT11 Data |
-| GPIO2 | A4 | D2 |  |
-| GPIO3 | A5 | D1 |  | 
+| Pi GPIO2 | A4 | D2 |  |
+| Pi GPIO3 | A5 | D1 |  | 
 
 
 
