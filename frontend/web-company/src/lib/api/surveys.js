@@ -1,4 +1,3 @@
-import qs from 'qs';
 import client from './client';
 
 // 설문 생성

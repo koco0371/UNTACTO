@@ -1,11 +1,11 @@
 // AuthForm 을 사용해서 만든 실제로 데이터가 사용되는 컨테이너
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 // auth 관련 action 생성 함수들
 import { changeField, initializeForm, signup } from '../../modules/auth';
 import AuthForm from '../../components/auth/AuthForm';
 import check from '../../modules/user';
-import { withRouter } from 'react-router-dom';
 
 const SignupForm = ({ history }) => {
   const [error, setError] = useState(null);
@@ -59,7 +59,7 @@ const SignupForm = ({ history }) => {
   useEffect(() => {
     if (authError) {
       if (authError.response.status === 409) {
-        setError('이미 존재하는 회사명입니다.');
+        setError('이미 가입한 이메일입니다.');
         return;
       }
       setError('회원가입 실패');
