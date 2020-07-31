@@ -6,6 +6,6 @@ const { verifyToken } = require('./tokenAuth');
 
 router.use(cookieParser());
 
-router.post('/', verifyToken,createSurveyRouter.uploadSurvey);
+router.post('/',verifyToken, createSurveyRouter);
 
 module.exports = router;
