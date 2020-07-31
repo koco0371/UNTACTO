@@ -63,10 +63,10 @@ const Sidebar = () => {
             <Link to="/write">Create Survey</Link>
           </div>
           <div>
-            <Link to="/">Member</Link>
+            <Link to="/member">Member</Link>
           </div>
           <div>
-            <Link to="/">Help</Link>
+            <Link to="/help">Help</Link>
           </div>
         </Wrapper>
       </SidebarBlock>
