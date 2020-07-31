@@ -66,7 +66,7 @@ const SurveyItem = ({ survey }) => {
   return (
     <SurveyItemBlock>
       <h2>
-        <Link to={`/${surveyId}`}>
+        <Link to={`survey/${surveyId}`}>
           {title.length < 30 ? title : title.slice(0, 30)}
         </Link>
       </h2>
@@ -86,10 +86,61 @@ const SurveyItem = ({ survey }) => {
   );
 };
 
-const SurveyList = ({ surveys, loading, error }) => {
-  if (error) {
-    return <SurveyListBlock>에러가 발생했습니다</SurveyListBlock>;
-  }
+// const SurveyList = ({ surveys, loading, error }) => {
+//   if (error) {
+//     return <SurveyListBlock>에러가 발생했습니다</SurveyListBlock>;
+//   }
+
+const SurveyList = () => {
+  const loading = false;
+  const error = null;
+  const surveys = [
+    {
+      surveyId: 1,
+      title: '예시 설문',
+      user: {
+        companyName: 'kenny company',
+        userId: 1,
+      },
+      createdAt: '2020-07-30',
+      kiosk: {
+        kioskId: 1,
+        location: '역삼',
+      },
+      description: '이런저런 설문입니다',
+      answers: [],
+    },
+    {
+      surveyId: 2,
+      title: '예시 설문',
+      user: {
+        companyName: 'kenny company',
+        userId: 1,
+      },
+      createdAt: '2020-07-30',
+      kiosk: {
+        kioskId: 1,
+        location: '역삼',
+      },
+      description: '이런저런 설문입니다',
+      answers: [],
+    },
+    {
+      surveyId: 3,
+      title: '예시 설문',
+      user: {
+        companyName: 'kenny company',
+        userId: 1,
+      },
+      createdAt: '2020-07-30',
+      kiosk: {
+        kioskId: 1,
+        location: '역삼',
+      },
+      description: '이런저런 설문입니다',
+      answers: [],
+    },
+  ];
   return (
     <SurveyListBlock>
       {!loading && surveys && (

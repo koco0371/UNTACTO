@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Main from '../common/Main';
+import AnalysisViewer from '../../components/survey/AnalysisViewer';
 
 const SurveyViewerBlock = styled(Main)`
   margin-top: 4rem;
@@ -56,16 +57,32 @@ const AnalysisContent = styled.div`
   }
 `;
 
-const SurveyViewer = ({ survey, error, loading }) => {
-  if (error) {
-    if (error.response && error.response.status === 404) {
-      return <SurveyViewerBlock>존재하지 않는 설문입니다.</SurveyViewerBlock>;
-    }
-    return <SurveyViewerBlock>오류가 발생했습니다.</SurveyViewerBlock>;
-  }
-  if (loading || !survey) {
-    return null;
-  }
+// const SurveyViewer = ({ survey, error, loading }) => {
+// if (error) {
+//   if (error.response && error.response.status === 404) {
+//     return <SurveyViewerBlock>존재하지 않는 설문입니다.</SurveyViewerBlock>;
+//   }
+//   return <SurveyViewerBlock>오류가 발생했습니다.</SurveyViewerBlock>;
+// }
+// if (loading || !survey) {
+//   return null;
+// }
+
+const SurveyViewer = () => {
+  const survey = {
+    title: '예시 설문',
+    user: {
+      companyName: 'kenny company',
+      userId: 1,
+    },
+    createdAt: '2020-07-30',
+    kiosk: {
+      kioskId: 1,
+      location: '역삼',
+    },
+    description: '이런저런 설문입니다',
+    answers: [],
+  };
 
   const { title, user, createdAt, kiosk, description, answers } = survey;
   return (
@@ -85,8 +102,7 @@ const SurveyViewer = ({ survey, error, loading }) => {
         <p>{description}</p>
       </SurveyContent>
       <AnalysisContent>
-        <h2>analysis</h2>
-        <p>{answers}</p>
+        <AnalysisViewer more />
       </AnalysisContent>
     </SurveyViewerBlock>
   );
