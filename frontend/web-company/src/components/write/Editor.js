@@ -124,31 +124,33 @@ const Editor = ({ onChangeField, title, description, video, kiosks }) => {
         placeholder="제목을 입력하세요"
         onChange={onChangeTitle}
         value={title}
+        name="title"
       />
       <DescriptionInput
         placeholder="영상에 대해 간략히 설명해주세요"
         onChange={onChangeDescription}
         value={description}
+        name="description"
       />
       <VideoForm encType="multipart/form-data">
         <div className="video-label">
-          <label htmlFor="file">
+          <label htmlFor="video">
             <i className="fas fa-upload"></i>
             영상 업로드
           </label>
         </div>
         <input
           type="file"
-          name="file"
+          name="video"
           accept="video/*, image/*"
-          id="file"
+          id="video"
           className="video-input"
           onChange={onChangeVideo}
         />
         {video && <div className="video-name">선택된 영상: </div>}
       </VideoForm>
       <div className="select-label">Kiosk를 선택해주세요</div>
-      <KioskSelect onChange={onChangeSelect}>
+      <KioskSelect onChange={onChangeSelect} name="selectedKiosk">
         {kiosks &&
           kiosks.map((kiosk) => (
             <option key={kiosk.kioskId} value={kiosk.kioskId}>
