@@ -8,9 +8,6 @@ export const writeSurvey = (formData) => client.post('/api/surveys', formData);
 export const readSurvey = (id) => client.get(`/api/surveys/${id}`);
 
 // 설문 리스트
-export const listSurveys = ({ companyName }) => {
-  const queryString = qs.stringify({
-    companyName,
-  });
-  return client.get(`/api/surveys?${queryString}`);
+export const listSurveys = ({ companyId }) => {
+  return client.get(`/api/surveys?${companyId}`);
 };
