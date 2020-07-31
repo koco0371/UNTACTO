@@ -2,27 +2,87 @@ import React, { useEffect, useCallback } from 'react';
 import Editor from '../../components/write/Editor';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeField, initialize } from '../../modules/write';
+import { withRouter } from 'react-router-dom';
+import { writeSurvey } from '../../modules/write';
 
-const EditorContainer = () => {
+const EditorContainer = ({ history }) => {
   const dispatch = useDispatch();
-  const { title, description, video, kiosks } = useSelector(({ write }) => ({
+  const {
+    title,
+    description,
+    video,
+    selectedKiosk,
+    survey,
+    surveyError,
+  } = useSelector(({ write }) => ({
     title: write.title,
     description: write.description,
     video: write.video,
-    kiosks: write.kiosks,
+    selectedKiosk: write.selectedKiosk,
+    survey: write.survey,
+    surveyError: write.surveyError,
   }));
   const onChangeField = useCallback(
     (payload) => dispatch(changeField(payload)),
     [dispatch],
   );
+  const onPublish = () => {
+    if ([title, description, video, selectedKiosk].includes('')) {
+      alert('빈칸을 채워주세요');
+      return;
+    }
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('description', description);
+    formData.append('video', video);
+    formData.append('selectedKiosk', selectedKiosk);
+    dispatch(writeSurvey(formData));
+  };
+
+  const onCancel = () => {
+    history.goBack();
+  };
+  const kiosks = [
+    {
+      kioskId: '1',
+      location: '홍대',
+    },
+    {
+      kioskId: '2',
+      location: '신촌',
+    },
+    {
+      kioskId: '3',
+      location: '구의',
+    },
+    {
+      kioskId: '4',
+      location: '역삼',
+    },
+    {
+      kioskId: '5',
+      location: '강남',
+    },
+  ];
+
   useEffect(() => {
+    if (survey) {
+      // const { surveyId, user } = survey;
+      history.push('/survey');
+    }
+    if (surveyError) {
+      console.log(surveyError);
+    }
     return () => {
       dispatch(initialize());
     };
-  }, [dispatch]);
+  }, [dispatch, history, survey, surveyError]);
+
   return (
     <Editor
       onChangeField={onChangeField}
+      onPublish={onPublish}
+      onCancel={onCancel}
       title={title}
       description={description}
       video={video}
@@ -31,4 +91,4 @@ const EditorContainer = () => {
   );
 };
 
-export default EditorContainer;
+export default withRouter(EditorContainer);

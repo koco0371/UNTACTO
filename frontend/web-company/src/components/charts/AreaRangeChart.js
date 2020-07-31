@@ -31,7 +31,7 @@ const LINE_CHART_DATA = {
 };
 
 const SIZE = {
-  height: '400',
+  height: 400,
 };
 const CHART_AXIS = {
   x: {
