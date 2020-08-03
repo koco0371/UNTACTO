@@ -4,10 +4,10 @@ import * as answersAPI from '../lib/api/surveysAnswers';
 import { takeLatest } from 'redux-saga/effects';
 
 // action type
-const READ_SURVEY_ANSWER = 'answer/READ_SURVEY_ANSWER';
-const READ_SURVEY_ANSWER_SUCCESS = 'answer/READ_SURVEY_ANSWER_SUCCESS';
-const READ_SURVEY_ANSWER_FAILURE = 'answer/READ_SURVEY_ANSWER_FAILURE';
-const UNLOAD_SURVEY_ANSWER = 'answer/UNLOAD_SURVEY_ANSWER';
+const READ_SURVEY_ANSWER = 'surveyAnswer/READ_SURVEY_ANSWER';
+const READ_SURVEY_ANSWER_SUCCESS = 'surveyAnswer/READ_SURVEY_ANSWER_SUCCESS';
+const READ_SURVEY_ANSWER_FAILURE = 'surveyAnswer/READ_SURVEY_ANSWER_FAILURE';
+const UNLOAD_SURVEY_ANSWER = 'surveyAnswer/UNLOAD_SURVEY_ANSWER';
 
 // action creator
 export const readSurveyAnswer = createAction(READ_SURVEY_ANSWER, (id) => id);

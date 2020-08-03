@@ -2,7 +2,7 @@ import React from 'react';
 import Sidebar from '../components/common/Sidebar';
 import HeaderContainer from '../containers/common/HeaderContainer';
 import MobileHeaderContainer from '../containers/common/MobileHeaderContainer';
-import AnalysisViewer from '../components/survey/AnalysisViewer';
+import DashboardViewerContainer from '../containers/surveys/DashboardViewerContainer';
 
 const DashboardPage = () => {
   return (
@@ -10,7 +10,7 @@ const DashboardPage = () => {
       <HeaderContainer />
       <MobileHeaderContainer />
       <Sidebar />
-      <AnalysisViewer />
+      <DashboardViewerContainer />
     </>
   );
 };
