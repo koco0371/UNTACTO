@@ -31,12 +31,16 @@ const EditorContainer = ({ history }) => {
       alert('빈칸을 채워주세요');
       return;
     }
-    const formData = new FormData();
-    formData.append('title', title);
-    formData.append('description', description);
-    formData.append('video', video);
-    formData.append('selectedKiosk', selectedKiosk);
-    dispatch(writeSurvey(formData));
+    // const formData = new FormData();
+    // formData.append('title', title);
+    // formData.append('description', description);
+    // formData.append('video', video);
+    // formData.append('selectedKiosk', selectedKiosk);
+    // for (let key of formData.entries()) {
+    //   console.log(key[0] + ', ' + key[1]);
+    // }
+    // client.post('/api/surveys', formData);
+    dispatch(writeSurvey({ title, description, video, selectedKiosk }));
   };
 
   const onCancel = () => {
