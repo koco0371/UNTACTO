@@ -51,8 +51,6 @@ class DonutChart extends PureComponent {
 
   getRef = (Instance) => {
     this.element = Instance;
-
-    console.log(Instance);
   };
 
   render() {

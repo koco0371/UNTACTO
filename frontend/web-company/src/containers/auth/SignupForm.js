@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 // auth 관련 action 생성 함수들
 import { changeField, initializeForm, signup } from '../../modules/auth';
 import AuthForm from '../../components/auth/AuthForm';
-import check from '../../modules/user';
+import { check } from '../../modules/user';
 
 const SignupForm = ({ history }) => {
   const [error, setError] = useState(null);
