@@ -12,6 +12,7 @@ const SurveyListContainer = ({ match }) => {
       error: surveys.error,
       loading: loading['surveys/LIST_SURVEYS'],
       user: user.user,
+      companyId: user.user.companyId,
     }),
   );
   useEffect(() => {

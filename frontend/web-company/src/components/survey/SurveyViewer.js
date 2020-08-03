@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Main from '../common/Main';
-import AnalysisViewer from '../../components/survey/AnalysisViewer';
+import AnalysisViewerContainer from '../../containers/survey/AnalysisViewerContainer';
 
 const SurveyViewerBlock = styled(Main)`
   margin-top: 4rem;
@@ -102,7 +102,7 @@ const SurveyViewer = () => {
         <p>{description}</p>
       </SurveyContent>
       <AnalysisContent>
-        <AnalysisViewer more />
+        <AnalysisViewerContainer />
       </AnalysisContent>
     </SurveyViewerBlock>
   );
