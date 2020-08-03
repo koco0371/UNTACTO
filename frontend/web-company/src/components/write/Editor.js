@@ -14,7 +14,7 @@ const EditorBlock = styled.form`
   height: calc(100% - 8rem);
 
   .select-label {
-    margin-top: 5rem;
+    margin-top: 3rem;
     font-size: 1.125rem;
     font-family: 'Nanum-Gothic', -apple-system, BlinkMacSystemFont, 'Segoe UI',
       'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
@@ -92,6 +92,15 @@ const DescriptionInput = styled.textarea`
     'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     'Helvetica Neue', sans-serif;
 `;
+const DurationInput = styled.input`
+  font-size: 1rem;
+  outline: none;
+  padding-bottom: 0.5rem;
+  border: none;
+  border-bottom: 1px solid ${palette.gray[4]};
+  margin-top: 2rem;
+  width: 100%;
+`;
 const KioskSelect = styled.select`
   margin-top: 1rem;
   width: 200px;
@@ -133,6 +142,7 @@ const Editor = ({
   title,
   description,
   video,
+  duration,
   kiosks,
 }) => {
   const onChangeTitle = (e) => {
@@ -143,6 +153,9 @@ const Editor = ({
   };
   const onChangeVideo = (e) => {
     onChangeField({ key: 'video', value: e.target.files[0] });
+  };
+  const onChangeDuration = (e) => {
+    onChangeField({ key: 'duration', value: e.target.value });
   };
   const onChangeSelect = (e) => {
     onChangeField({ key: 'selectedKiosk', value: e.target.value });
@@ -184,6 +197,12 @@ const Editor = ({
         className="video-input"
         onChange={onChangeVideo}
       ></VideoInput>
+      <DurationInput
+        placeholder="설문을 진행할 기간을 입력하세요 (일 단위)"
+        onChange={onChangeDuration}
+        value={duration}
+        name="duration"
+      ></DurationInput>
       <div className="select-label">Kiosk를 선택해주세요</div>
       <KioskSelect onChange={onChangeSelect} name="selectedKiosk">
         {kiosks &&
