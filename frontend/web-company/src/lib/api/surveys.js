@@ -1,7 +1,15 @@
 import client from './client';
 
 // 설문 생성
-export const writeSurvey = (formData) => client.post('/api/surveys', formData);
+export const writeSurvey = ({ title, description, video, selectedKiosk }) => {
+  // console.log(title, description, video, selectedKiosk);
+  const formData = new FormData();
+  formData.append('title', title);
+  formData.append('description', description);
+  formData.append('video', video);
+  formData.append('selectedKiosk', selectedKiosk);
+  return client.post('/api/surveys', formData);
+};
 
 // 설문 디테일
 export const readSurvey = (id) => client.get(`/api/surveys/${id}`);
