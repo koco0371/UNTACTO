@@ -49,11 +49,6 @@ const Wrapper = styled.div`
   }
 `;
 
-const UserInfo = styled.div`
-  font-weight: bold;
-  margin-right: 1rem;
-`;
-
 const Spacer = styled.div`
   height: 4rem;
 `;
@@ -92,7 +87,6 @@ const MobileHeader = ({ user, onLogout }) => {
           </Link>
           {user ? (
             <div className="right">
-              <UserInfo>{user.companyName}</UserInfo>
               <Button onClick={onLogout}>로그아웃</Button>
             </div>
           ) : (
