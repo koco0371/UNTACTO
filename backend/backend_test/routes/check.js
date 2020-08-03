@@ -11,11 +11,15 @@ router.get('/', function (req, res, next) {
 	var user = req.cookies.user;
 	var companyName = req.cookies.companyName;
 	var companyId = req.cookies.companyId;
+	if(user == null){
+		res.send('');
+	} else {
 	res.json({
-		'user': user,
-		'companyName': companyName,
-		'companyId': companyId,
-	});
+			'user': user,
+			'companyName': companyName,
+			'companyId': companyId,
+		});
+	}
 });
 
 module.exports = router;
