@@ -18,16 +18,14 @@ const storage=multer.diskStorage({
 const upload = multer({ storage });
 
 router.post('/',upload.single('video'), function(req,res,next) {
-		console.log(req.file);
-		console.log(req.body);
 		if(req.file!=undefined){
 		console.log("upload success");
 		var title = req.body['title'];
 		var explain = req.body['description'];
 		var selectedKiosk = req.body['selectedKiosk'];
 		let file = req.file;
-		var companyId = 1;
-		var videoPath = path.join(__dirname, file.originalname);
+		var companyId = res.locals.userId;
+		var videoPath = path.join(__dirname+'/../'+file.path);
 		var connection = mysql.createConnection({
 			host: 'localhost',
 			post: 3306,
@@ -36,10 +34,15 @@ router.post('/',upload.single('video'), function(req,res,next) {
 			database: 'project1'
 			});
 		connection.connect();
-		var sql = 'insert into survey (surveyId,companyId,title,location,video,description_survey) values(1,'+companyId+',"'+title+'","'+selectedKiosk+'","'+videoPath+'","'+explain+'")';
-		connection.query(sql,function(err){
+		var sql = 'select COUNT(*) as num from survey where companyId='+companyId+';'
+		connection.query(sql,function(err,rows,fields){
+			console.log(rows);
+			var num=rows[0]['num']+1;
+			sql = 'insert into survey (surveyId,companyId,title,location,video,description_survey) values('+num+','+companyId+',"'+title+'","'+selectedKiosk+'","'+videoPath+'","'+explain+'")';
+			connection.query(sql,function(err){
+				connection.end();
 				if(!err){
-					console.log("insert success");
+						console.log("insert success");
 					res.json({
 						result: "ok"
 					});
@@ -51,6 +54,7 @@ router.post('/',upload.single('video'), function(req,res,next) {
 						message: err
 					});
 				}
+			});
 		});
 		}
 		else{

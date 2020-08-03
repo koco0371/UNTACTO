@@ -8,13 +8,13 @@ router.use(cookieParser());
 
 const verifyToken = (req,res,next) =>{
 	try{
-		console.log(req.cookies);
 		const clientToken = req.cookies.user;
 		const decoded = jwt.verify(clientToken,secret);
+		console.log(decoded)
 
 		if(decoded){
 			console.log("success token");
-			res.locals.userId=decoded.companyId;
+			res.locals.userId=decoded.id;
 			next();
 		}
 		else{
