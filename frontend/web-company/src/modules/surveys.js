@@ -9,8 +9,8 @@ const LIST_SURVEYS_SUCCESS = 'surveys/LIST_SURVEYS_SUCCESS';
 const LIST_SURVEYS_FAILURE = 'surveys/LIST_SURVEYS_FAILURE';
 
 // action creator
-export const listSurveys = createAction(LIST_SURVEYS, ({ companyName }) => ({
-  companyName,
+export const listSurveys = createAction(LIST_SURVEYS, ({ companyId }) => ({
+  companyId,
 }));
 
 // saga
