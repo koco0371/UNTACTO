@@ -93,7 +93,6 @@ const SurveyItem = ({ survey }) => {
 
 const SurveyList = () => {
   const loading = false;
-  const error = null;
   const surveys = [
     {
       surveyId: 1,

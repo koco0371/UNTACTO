@@ -84,7 +84,7 @@ const SurveyViewer = () => {
     answers: [],
   };
 
-  const { title, user, createdAt, kiosk, description, answers } = survey;
+  const { title, user, createdAt, kiosk, description } = survey;
   return (
     <SurveyViewerBlock>
       <SurveyHead>

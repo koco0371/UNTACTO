@@ -47,8 +47,10 @@ router.post('/', function (req, res, next) {
 			});
 		} else {
 			console.log("select failed");
+			res.status(409).json({msg:err});
 		}
 	});
 });
 
 module.exports = router;
+

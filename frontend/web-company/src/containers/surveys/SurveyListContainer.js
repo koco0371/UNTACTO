@@ -16,7 +16,7 @@ const SurveyListContainer = ({ match }) => {
   );
   useEffect(() => {
     dispatch(listSurveys({ companyId }));
-  }, [dispatch]);
+  }, [dispatch, companyId]);
   return <SurveyList loading={loading} error={error} surveys={surveys} />;
 };
 
