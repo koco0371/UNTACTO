@@ -21,25 +21,25 @@ router.post('/', function (req, res, next) {
 	var sql = 'insert into company (companyId, companyName, password, email) values(';
 	connection.query('select COUNT(*) as cnt from company', function(err, rows){
 		if(!err){
-			console.log("select success");
-			sql = sql + (rows[0]['cnt']);
+			var companyId=rows[0]['cnt'] + 1;
+			sql = sql + companyId;
 			sql = sql +  ",'"+companyName+"','"+password+"','"+email+"');";
 			connection.query(sql, function (err) {
-		        	if (!err) {
-					console.log("success");
+		        if (!err) {
+					console.log("signUp success");
 					console.log("login");
-				const token = jwt.sign({
-					id:rows[0]['companyId'],
-					exp:Math.floor(Date.now()/1000) + (60*60)
-				},
-				secret);
-				res.cookie('user', token);
-				res.cookie('companyName', rows[0]['companyName']);
-				res.cookie('companyId', rows[0]['companyId']);
-				res.json({
-					result: 'ok',
-					token
-				});;
+					const token = jwt.sign({
+						id:companyId,
+						exp:Math.floor(Date.now()/1000) + (60*60)
+					},
+					secret);
+					res.cookie('user', token);
+					res.cookie('companyName', rows[0]['companyName']);
+					res.cookie('companyId', rows[0]['companyId']);
+					res.json({
+						result: 'ok',
+						token
+					});
 				} else {
 					console.log(err);
 					res.status(409).json({msg:err});
