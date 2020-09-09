@@ -38,7 +38,7 @@
 1. Clone the repo
 
 ```sh
-git clone https://lab.ssafy.com/s03-webmobile3-sub3/s03p13a103.git
+git clone 
 ```
 
 2. Install npm packages
@@ -79,7 +79,7 @@ If you want to scale up processes
 run nginx
 $ sudo systemctl start nginx
 $ sudo systemctl restart nginx
-- http://i3a103.p.ssafy.io/
+
 ```
 
 ### Directory
